@@ -7,7 +7,6 @@ export default function ArticleList() {
 
   useEffect(() => {
     api.fetchArticles().then((users) => {
-      console.log(users);
       setArticleArr(users);
     });
   }, []);

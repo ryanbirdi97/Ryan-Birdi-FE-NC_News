@@ -2,7 +2,7 @@ export default function ArticleCard({ article }) {
   const { title, author, topic, created_at, comment_count, votes } = article;
   const date = created_at.slice(0, 10);
   return (
-    <li>
+    <li className="article-card">
       <h3>{title}</h3>
       <ul>
         <li>Author: {author}</li>
