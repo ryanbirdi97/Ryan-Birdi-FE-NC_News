@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Link to={"/"}>
+        <Link to={"/articles"}>
           <Header />
         </Link>
         <Nav />
