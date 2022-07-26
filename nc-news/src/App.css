@@ -11,3 +11,13 @@ ul {
   padding: 15px;
   padding-top: 10px;
 }
+
+.single-article {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  border: 10px solid greenyellow;
+}
