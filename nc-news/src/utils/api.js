@@ -9,3 +9,15 @@ export const fetchArticles = () => {
     return data.articles;
   });
 };
+
+export const fetchArticleByTopic = (value) => {
+  return API.get(`articles?topic=${value}`).then(({ data }) => {
+    return data.articles;
+  });
+};
+
+export const fetchSingleArticle = (id) => {
+  return API.get(`articles/${id}`).then(({ data }) => {
+    return data.article;
+  });
+};
