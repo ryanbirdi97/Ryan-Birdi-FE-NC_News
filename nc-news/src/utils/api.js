@@ -23,8 +23,13 @@ export const fetchSingleArticle = (id) => {
 };
 
 export const patchUserVotes = (id, votes) => {
-  console.log("hello");
   return API.patch(`/articles/${id}`, { inc_votes: votes }).then(({ data }) => {
     return data.article;
+  });
+};
+
+export const fetchArticleComments = (id) => {
+  return API.get(`/articles/${id}/comments`).then(({ data }) => {
+    return data.comments;
   });
 };

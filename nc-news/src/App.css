@@ -29,3 +29,7 @@ nav {
   justify-content: space-around;
   padding: 10px;
 }
+
+.comment {
+  border: 1px solid gray;
+}

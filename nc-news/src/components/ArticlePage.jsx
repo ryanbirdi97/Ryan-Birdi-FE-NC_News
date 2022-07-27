@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as api from "../utils/api";
+import ArticleComments from "./ArticleComments";
 
 export default function ArticlePage() {
   const { article_id } = useParams();
@@ -52,6 +53,9 @@ export default function ArticlePage() {
         </button>
       </section>
       {err ? <p>{err}</p> : null}
+      <section>
+        <ArticleComments />
+      </section>
     </div>
   );
 }
