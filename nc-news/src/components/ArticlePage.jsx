@@ -15,7 +15,20 @@ export default function ArticlePage() {
 
   const { title, topic, author, body, created_at, votes } = singleArticle;
 
-  console.log(singleArticle);
+  const [newVote, setNewVote] = useState(0);
+  const [err, setErr] = useState(null);
+
+  const handleClick = (article_id, numberOfVotes) => {
+    setNewVote((currentVote) => {
+      return (currentVote += numberOfVotes);
+    });
+
+    api.patchUserVotes(article_id, numberOfVotes).catch((err) => {
+      console.log(err);
+      setErr("Error! try again.");
+    });
+  };
+
   return (
     <div className="single-article">
       <h3>{title}</h3>
@@ -23,7 +36,22 @@ export default function ArticlePage() {
       <p>Topic: {topic}</p>
       <p>{body}</p>
       <p>Created: {created_at}</p>
-      <p>Votes: {votes}</p>
+      <section className="votes">
+        <button
+          disabled={newVote <= -1}
+          onClick={() => handleClick(article_id, -1)}
+        >
+          -
+        </button>
+        <p>Votes: {votes + newVote}</p>
+        <button
+          disabled={newVote >= 1}
+          onClick={() => handleClick(article_id, 1)}
+        >
+          +
+        </button>
+      </section>
+      {err ? <p>{err}</p> : null}
     </div>
   );
 }

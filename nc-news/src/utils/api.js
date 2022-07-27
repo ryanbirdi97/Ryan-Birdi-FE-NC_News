@@ -21,3 +21,10 @@ export const fetchSingleArticle = (id) => {
     return data.article;
   });
 };
+
+export const patchUserVotes = (id, votes) => {
+  console.log("hello");
+  return API.patch(`/articles/${id}`, { inc_votes: votes }).then(({ data }) => {
+    return data.article;
+  });
+};
