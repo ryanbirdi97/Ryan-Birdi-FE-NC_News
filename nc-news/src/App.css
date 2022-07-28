@@ -50,3 +50,10 @@ nav {
   flex-direction: column;
   padding: 1px;
 }
+
+.article-list {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  text-align: center;
+}

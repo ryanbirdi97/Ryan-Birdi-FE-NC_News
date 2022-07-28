@@ -23,7 +23,7 @@ export default function ArticleList() {
   }, [sort, order, topic]);
 
   return (
-    <section>
+    <section className="article-list">
       <SortBy setSort={setSort} setOrder={setOrder} />
       <ul>
         {articleArr.map((article) => {
