@@ -41,7 +41,6 @@ export const fetchArticleComments = (id) => {
 };
 
 export const postArticleComment = (id, newComment) => {
-  console.log(newComment);
   return API.post(`/articles/${id}/comments`, newComment)
     .then(({ data }) => {
       return data.comment;
@@ -49,4 +48,10 @@ export const postArticleComment = (id, newComment) => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const deleteComment = (id) => {
+  return API.delete(`/comments/${id}`).then(() => {
+    console.log("Comment deleted");
+  });
 };

@@ -1,28 +1,29 @@
 export const SortBy = ({ setSort, setOrder }) => {
   const handleClick = (sort) => {
-    const [sortBy, order] = sort.split(" ");
-    setSort(sortBy);
-    setOrder(order);
+    const valueArr = sort.split(" ");
+    setSort(valueArr[0]);
+    setOrder(valueArr[1]);
   };
 
   return (
-    <div>
-      <label>
-        <select
-          className="sort_by"
-          onChange={(event) => {
-            handleClick(event.target.value);
-          }}
-        >
-          <option value="">Sort By...</option>
-          <option value="created_at ASC">Oldest</option>
-          <option value="created_at DESC">Most Recent</option>
-          <option value="comment_count ASC">Fewest Comments</option>
-          <option value="comment_count DESC">Most Comment</option>
-          <option value="votes ASC">Least Votes</option>
-          <option value="votes DESC">Most Votes</option>
-        </select>
-      </label>
-    </div>
+    <section className="sort-by">
+      <div>
+        <label>
+          <select
+            value={(setSort, setOrder)}
+            onChange={(event) => {
+              handleClick(event.target.value);
+            }}
+          >
+            <option value="created_at DESC">Newest</option>
+            <option value="created_at ASC">Oldest</option>
+            <option value="comment_count DESC">Most Comments</option>
+            <option value="comment_count ASC">Fewest Comments</option>
+            <option value="votes DESC">Most Votes</option>
+            <option value="votes ASC">Least Votes</option>
+          </select>
+        </label>
+      </div>
+    </section>
   );
 };
