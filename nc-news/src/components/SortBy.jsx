@@ -6,11 +6,11 @@ export const SortBy = ({ setSort, setOrder }) => {
   };
 
   return (
-    <section className="sory-by">
+    <section className="sort-by">
       <div>
         <label>
           <select
-            className="sort_by"
+            value={(setSort, setOrder)}
             onChange={(event) => {
               handleClick(event.target.value);
             }}
