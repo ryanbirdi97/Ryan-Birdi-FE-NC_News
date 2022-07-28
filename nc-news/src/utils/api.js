@@ -33,3 +33,14 @@ export const fetchArticleComments = (id) => {
     return data.comments;
   });
 };
+
+export const postArticleComment = (id, newComment) => {
+  console.log(newComment);
+  return API.post(`/articles/${id}/comments`, newComment)
+    .then(({ data }) => {
+      return data.comment;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
