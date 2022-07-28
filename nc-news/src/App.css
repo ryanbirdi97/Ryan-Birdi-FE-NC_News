@@ -57,3 +57,8 @@ nav {
   align-content: flex-end;
   text-align: center;
 }
+
+.user-identifier {
+  display: flex;
+  justify-content: end;
+}
