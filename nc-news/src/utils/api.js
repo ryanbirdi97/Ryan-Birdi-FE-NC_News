@@ -4,8 +4,14 @@ const API = axios.create({
   baseURL: "https://secret-wildwood-67627.herokuapp.com/api/",
 });
 
-export const fetchArticles = () => {
-  return API.get("/articles").then(({ data }) => {
+export const fetchArticles = (
+  sort = "created_at",
+  order = "desc",
+  topic = undefined
+) => {
+  return API.get("/articles", {
+    params: { sort_by: sort, order: order, topic: topic },
+  }).then(({ data }) => {
     return data.articles;
   });
 };

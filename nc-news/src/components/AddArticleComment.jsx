@@ -17,6 +17,8 @@ export default function AddArticleComment({ setComments }) {
       api
         .postArticleComment(article_id, { username: username, body: comment })
         .then((returnedComment) => {
+          setComment("");
+          setUsername("");
           setMessage("Comment added!");
           setComments((currentComments) => {
             return [returnedComment, ...currentComments];
@@ -30,27 +32,30 @@ export default function AddArticleComment({ setComments }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <section className="submit-comment">
+      <form className="comment-form" onSubmit={handleSubmit}>
         <label htmlFor="user-comment">Comment: </label>
         <input
           type="text"
           id="user-comment"
+          className="comment-box"
+          value={comment}
           onChange={(e) => {
             setComment(e.target.value);
           }}
         ></input>
-        <label htmlFor="username">Username: </label>
+        <label htmlFor="username">Existing Username: </label>
         <input
           type="text"
           id="username"
+          value={username}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         ></input>
-        <input type="submit" value="Submit"></input>
+        <input className="comment-submit" type="submit" value="Submit"></input>
+        {message ? <p>{message}</p> : null}
       </form>
-      {message ? <p>{message}</p> : null}
-    </div>
+    </section>
   );
 }
