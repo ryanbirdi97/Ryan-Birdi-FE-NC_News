@@ -33,3 +33,20 @@ nav {
 .comment {
   border: 1px solid gray;
 }
+
+.submit-comment {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.comment-box {
+  height: 100px;
+  width: 200px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+}

@@ -1,24 +1,31 @@
 import * as api from "../utils/api";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import AddArticleComment from "./AddArticleComment";
 
 export default function ArticleComments() {
-  const [comments, setComments] = useState([]);
   const { article_id } = useParams();
+
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     api.fetchArticleComments(article_id).then((response) => {
       setComments(response);
     });
-  });
+  }, [article_id]);
 
-  return comments.map(({ body, author, created_at }) => {
-    return (
-      <div className="comment">
-        <p>{body}</p>
-        <p>{author}</p>
-        <p>{created_at.slice(0, 10)}</p>
-      </div>
-    );
-  });
+  return (
+    <section>
+      <AddArticleComment setComments={setComments} />
+      <h3>Comments</h3>
+      {comments.map(({ body, author }) => {
+        return (
+          <div className="comment">
+            <p>{body}</p>
+            <p>{author}</p>
+          </div>
+        );
+      })}
+    </section>
+  );
 }
