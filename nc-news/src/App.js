@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <p>User: cooljmessy</p>
+        <p className="user-identifier">User: cooljmessy</p>
         <Link to={"/articles"}>
           <Header />
         </Link>

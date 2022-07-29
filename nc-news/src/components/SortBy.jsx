@@ -15,6 +15,7 @@ export const SortBy = ({ setSort, setOrder }) => {
               handleClick(event.target.value);
             }}
           >
+            <option value="">Sort By...</option>
             <option value="created_at DESC">Newest</option>
             <option value="created_at ASC">Oldest</option>
             <option value="comment_count DESC">Most Comments</option>

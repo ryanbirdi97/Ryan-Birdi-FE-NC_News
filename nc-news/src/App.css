@@ -7,7 +7,7 @@ ul {
 }
 
 .article-card {
-  border: 4px solid gray;
+  border: 4px solid dodgerblue;
   padding: 15px;
   padding-top: 10px;
 }
@@ -19,7 +19,8 @@ ul {
 nav {
   display: flex;
   justify-content: space-around;
-  border: 10px solid greenyellow;
+  border: 10px solid slateblue;
+  font-size: 25px;
 }
 
 .votes {
@@ -31,7 +32,7 @@ nav {
 }
 
 .comment {
-  border: 1px solid gray;
+  border: 1px solid red;
 }
 
 .submit-comment {
@@ -61,4 +62,9 @@ nav {
 .user-identifier {
   display: flex;
   justify-content: end;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
 }

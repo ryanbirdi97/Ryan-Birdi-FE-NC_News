@@ -9,27 +9,39 @@ export default function ArticleList() {
   const { topic } = useParams();
   const [sort, setSort] = useState();
   const [order, setOrder] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     if (topic) {
       api.fetchArticles(sort, order, topic).then((article) => {
         setArticleArr(article);
+        setIsLoading(false);
       });
     } else {
       api.fetchArticles(sort, order).then((article) => {
         setArticleArr(article);
+        setIsLoading(false);
       });
     }
   }, [sort, order, topic]);
 
   return (
     <section className="article-list">
-      <SortBy setSort={setSort} setOrder={setOrder} />
-      <ul>
-        {articleArr.map((article) => {
-          return <ArticleCard article={article} />;
-        })}
-      </ul>
+      {isLoading ? (
+        <div>
+          <p> Loading articles... </p>
+        </div>
+      ) : (
+        <>
+          <SortBy setSort={setSort} setOrder={setOrder} />
+          <ul>
+            {articleArr.map((article) => {
+              return <ArticleCard article={article} />;
+            })}
+          </ul>
+        </>
+      )}
     </section>
   );
 }
