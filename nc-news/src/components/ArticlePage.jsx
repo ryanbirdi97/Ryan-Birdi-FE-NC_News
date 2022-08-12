@@ -32,13 +32,14 @@ export default function ArticlePage() {
 
   return (
     <div className="single-article">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>Author: {author}</p>
       <p>Topic: {topic}</p>
       <p>{body}</p>
       <p>Created: {created_at}</p>
       <section className="votes">
         <button
+          className="vote-button"
           disabled={newVote <= -1}
           onClick={() => handleClick(article_id, -1)}
         >
@@ -46,6 +47,7 @@ export default function ArticlePage() {
         </button>
         <p>Votes: {votes + newVote}</p>
         <button
+          className="vote-button"
           disabled={newVote >= 1}
           onClick={() => handleClick(article_id, 1)}
         >

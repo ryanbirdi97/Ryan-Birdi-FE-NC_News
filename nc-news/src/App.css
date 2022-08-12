@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: beige;
 }
 
 ul {
@@ -7,13 +8,19 @@ ul {
 }
 
 .article-card {
-  border: 4px solid dodgerblue;
-  padding: 15px;
+  border: 4px solid black;
+  padding: 25px;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: beige;
 }
 
 .single-article {
   text-align: center;
+  padding: 40px;
+  background-color: beige;
 }
 
 nav {
@@ -31,6 +38,11 @@ nav {
   padding: 10px;
 }
 
+.vote-button {
+  border: 3px solid black;
+  font-weight: bolder;
+}
+
 .comment {
   border: 1px solid red;
 }
@@ -42,14 +54,21 @@ nav {
 }
 
 .comment-box {
-  height: 100px;
-  width: 200px;
+  width: 400px;
+  padding-bottom: 80px;
+  border: 3px solid black;
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
   padding: 1px;
+  align-items: center;
+}
+
+.comment-submit {
+  width: 80px;
+  border: 2px solid black;
 }
 
 .article-list {
@@ -57,14 +76,32 @@ nav {
   justify-content: center;
   align-content: flex-end;
   text-align: center;
+  flex-direction: column;
+  padding-right: 30px;
+  background-color: beige;
 }
 
 .user-identifier {
   display: flex;
   justify-content: end;
+  padding-right: 10px;
 }
 
 .header {
   display: flex;
   justify-content: center;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+.sort-by {
+  display: flex;
+  justify-content: end;
+  padding-top: 10px;
+}
+
+.welcomeMsg {
+  text-align: center;
+  font-size: 32px;
+  padding-top: 40px;
 }

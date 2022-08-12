@@ -7,7 +7,14 @@ export default function ArticleCard({ article }) {
 
   return (
     <li className="article-card">
-      <h3>{title}</h3>
+      <Link
+        to={`/articles/${article_id}`}
+        onClick={() => {
+          <ArticlePage />;
+        }}
+      >
+        <h3>{title}</h3>
+      </Link>
       <ul>
         <li>Author: {author}</li>
         <li>Topic: {topic}</li>
@@ -15,14 +22,6 @@ export default function ArticleCard({ article }) {
         <li>Comments: {comment_count}</li>
         <li>Votes: {votes}</li>
       </ul>
-      <Link
-        to={`/articles/${article_id}`}
-        onClick={() => {
-          <ArticlePage />;
-        }}
-      >
-        <button>More Info</button>
-      </Link>
     </li>
   );
 }

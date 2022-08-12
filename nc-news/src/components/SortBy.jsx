@@ -6,9 +6,9 @@ export const SortBy = ({ setSort, setOrder }) => {
   };
 
   return (
-    <section className="sort-by">
+    <section>
       <div>
-        <label>
+        <label className="sort-by">
           <select
             value={(setSort, setOrder)}
             onChange={(event) => {

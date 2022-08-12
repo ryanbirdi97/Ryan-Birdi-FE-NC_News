@@ -33,14 +33,14 @@ export default function ArticleList() {
           <p> Loading articles... </p>
         </div>
       ) : (
-        <>
+        <div>
           <SortBy setSort={setSort} setOrder={setOrder} />
           <ul>
             {articleArr.map((article) => {
               return <ArticleCard article={article} />;
             })}
           </ul>
-        </>
+        </div>
       )}
     </section>
   );
