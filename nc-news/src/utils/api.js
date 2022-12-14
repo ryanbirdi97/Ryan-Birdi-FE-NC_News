@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://secret-wildwood-67627.herokuapp.com/api/",
+  baseURL: "https://rb-nc-news.onrender.com/api/",
 });
 
 export const fetchArticles = (
