@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: beige;
 }
 
 ul {
@@ -14,13 +13,11 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: beige;
 }
 
 .single-article {
   text-align: center;
   padding: 40px;
-  background-color: beige;
 }
 
 nav {
@@ -78,7 +75,6 @@ nav {
   text-align: center;
   flex-direction: column;
   padding-right: 30px;
-  background-color: beige;
 }
 
 .user-identifier {
